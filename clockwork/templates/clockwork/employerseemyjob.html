@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<h1>{{ object.job_title }}</h1>
+<hr>
+<p>Date: {{ object.date }}</p>
+<p>Time: {{ object.time }}</p>
+<p>Job Title: {{ object.job_title }}</p>
+<p>Job Location: {{ object.job_location }}</p>
+<p>Job Description: {{ object.job_description }}</p>
+<p>Wage: {{ object.wage }}</p>
+<hr>
+{% if jobseeker_list %}
+    <ul>
+    {% for jobseeker in jobseeker_list %}
+        <li><a href="{% url 'clockwork:jobseekerprofileview' jobseeker.id_number %}">{{ jobseeker.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No jobseekers have applied yet.</p>
+{% endif %}
+<a href=http://127.0.0.1:8000/clockwork/postajob/>Post another job</a>

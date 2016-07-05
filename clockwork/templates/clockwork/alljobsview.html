@@ -1,0 +1,32 @@
+{% load staticfiles %}
+
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<div id="banner">
+<h1>Clockwork<h1>
+<p></p>
+<h3>Search jobs below</h3>
+<h4 align="left">Click to see more info and apply<align></h4>
+<br><br><br>
+<br><br><br>
+</div>
+<h5>Jobs<h5>
+
+<body>
+
+{% if latest_job_list %}
+    <ul>
+    {% for job in latest_job_list %}
+        <li><a href="{% url 'clockwork:jobseekerjobview' job.id %}">{{ job.job_title}} @ {{job.job_location}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No jobs are available.</p>
+{% endif %}
+</body>
+<h3>Not registered yet?</h3>
+<input type="button" onclick="location.href = 'http://127.0.0.1:8000/clockwork/iamanemployer'" value="Employer" />
+<input type="button" onclick="location.href = 'http://127.0.0.1:8000/clockwork/iamajobseeker'" value="Jobseeker" />
+
+

@@ -1,0 +1,10 @@
+{% if latest_job_shortlist %}
+    <ul>
+    {% for jobseeker in latest_job_shortlist %}
+        <li><a href="{% url 'clockwork:jobseekerjobview' jobseeker.id %}"> contact {{ jobseeker.name}}, on {{job.phone_number}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No jobseekers have applied yet.</p>
+{% endif %}
+

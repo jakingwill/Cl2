@@ -1,0 +1,13 @@
+{% load staticfiles %}
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<h1>{{ object.name }}</h1>
+<hr>
+<p>Email: {{ object.email }}</p>
+<p>Phone Number: {{ object.phone_number }}</p>
+<p>Hometown: {{ object.home_location }}</p>
+<p>You are interested in: {{ object.industry }}, and {{ object.other_industry }}</p>
+<p>ID Number: {{ object.id_number }}</p>
+<input type="button" onclick="location.href = 'http://127.0.0.1:8000/clockwork/alljobsview/'" value="Find a Job" />
+<hr>

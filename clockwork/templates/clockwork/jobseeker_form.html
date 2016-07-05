@@ -1,0 +1,11 @@
+{% load staticfiles %}
+<h1>Clockwork Jobseeker</h1>
+<h3>Enter your details below:</h3>
+<a href=http://127.0.0.1:8000/clockwork/alljobsview/ class="button">Already registered? </a>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>

@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<div id=banner2>
+<h1>{{ object.job_title }}</h1>
+<br>
+</div>
+
+<p>Date: {{ object.date }}</p>
+<p>Time: {{ object.time }}</p>
+<p>Job Title: {{ object.job_title }}</p>
+<p>Job Location: {{ object.job_location }}</p>
+<p>Job Description: {{ object.job_description }}</p>
+<p>Wage: {{ object.wage }}</p>
+<input type="button" onclick="location.href = '{% url 'clockwork:jobseekerapplied' job.id %}'" value="Apply" />
+<br><br>
+<a href=http://127.0.0.1:8000/clockwork/alljobsview/>Back to all jobs</a>
+
